@@ -52,8 +52,46 @@ class linkedList {
             previous.next = current.next;
         }
     }
+
+    // this is for testing
+    display() {
+		let current = this.head;
+		let output = "";
+		while (current) {
+			output += current.value.title + " "+ current.value.author + "\n";
+			current = current.next
+		}; console.log(output);
+	}
 }
 
+function displayBooks(books) {
+    const booksContainer = document.querySelector(".books");
+    let current = books.head;
+    let index = 0;
+    while(current){
+        const newBook = `
+        <div class="book">
+            <p>${current.value.title}</p>
+            <p>${current.value.author}</p>
+            <button onclick="remove${index}">Remove</button>
+            <hr>
+        </div>
+        `;
+        booksContainer.innerHTML += newBook;
+        current = current.next;
+        index += 1;
+    }
+}
+
+const body = document.body;
+const books = new linkedList();
+const btn = document.getElementById("add");
 
 
-let books = new linkedList();
+btn.addEventListener("click", function() {
+    const title = document.querySelector("#title").value;
+    const author = document.querySelector("#author").value;
+    const newBook = new book(title, author);
+    books.add(newBook);
+    displayBooks(books);
+})
