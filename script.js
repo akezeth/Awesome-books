@@ -5,6 +5,13 @@ class node {
     }
 }
 
+class book {
+    constructor(title,author) {
+        this.title = title;
+        this.author = author;
+    }
+}
+
 class linkedList {
     constructor() {
         this.head = null;
@@ -25,4 +32,4 @@ class linkedList {
     }
 }
 
-let books = new linkedList()
+let books = new linkedList();
