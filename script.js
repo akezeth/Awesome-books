@@ -6,7 +6,7 @@ class node {
 }
 
 class book {
-    constructor(title,author) {
+    constructor(title, author) {
         this.title = title;
         this.author = author;
     }
@@ -20,11 +20,11 @@ class linkedList {
     }
 
     add(value) {
-        const newNode = new node(value); 
-        if(!this.head) {
+        const newNode = new node(value);
+        if (!this.head) {
             this.head = newNode;
             this.tail = newNode;
-        }else {
+        } else {
             this.tail.next = newNode;
             this.tail = newNode;
         }
@@ -51,29 +51,31 @@ class linkedList {
             }
             previous.next = current.next;
         }
+        displayAllBooks(books);
     }
 
     // this is for testing
     display() {
-		let current = this.head;
-		let output = "";
-		while (current) {
-			output += current.value.title + " "+ current.value.author + "\n";
-			current = current.next
-		}; console.log(output);
-	}
+        let current = this.head;
+        let output = "";
+        while (current) {
+            output += current.value.title + " " + current.value.author + "\n";
+            current = current.next
+        }; console.log(output);
+    }
 }
 
-function displayBooks(books) {
+function displayAllBooks(books) {
     const booksContainer = document.querySelector(".books");
+    booksContainer.innerHTML = "";
     let current = books.head;
     let index = 0;
-    while(current){
+    while (current) {
         const newBook = `
         <div class="book">
-            <p>${current.value.title}</p>
+            <h2>${current.value.title}</h2>
             <p>${current.value.author}</p>
-            <button onclick="remove${index}">Remove</button>
+            <button onclick="books.remove(${index})">Remove</button>
             <hr>
         </div>
         `;
@@ -83,15 +85,27 @@ function displayBooks(books) {
     }
 }
 
+function displayBook(book, index) {
+    const booksContainer = document.querySelector(".books");
+    const newBook = `
+        <div class="book">
+            <h2>${book.title}</h2>
+            <p>${book.author}</p>
+            <button onclick="books.remove(${index})">Remove</button>
+            <hr>
+        </div>
+        `;
+    booksContainer.innerHTML += newBook;
+}
+
 const body = document.body;
 const books = new linkedList();
 const btn = document.getElementById("add");
 
-
-btn.addEventListener("click", function() {
+btn.addEventListener("click", function () {
     const title = document.querySelector("#title").value;
     const author = document.querySelector("#author").value;
     const newBook = new book(title, author);
     books.add(newBook);
-    displayBooks(books);
+    displayBook(newBook, books.size - 1);
 })
