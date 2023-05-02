@@ -59,30 +59,30 @@ class LinkedList {
   remove(index) {
     let current = this.head;
     if (this.size === 1) {
-        this.head = null;
-        this.tail = null;
-        this.size = 0;
-        localStorage.removeItem('books');
+      this.head = null;
+      this.tail = null;
+      this.size = 0;
+      localStorage.removeItem('books');
     } else if (index === 0) {
-        this.head = current.next;
-        this.size -= 1;
-        const boks = JSON.stringify(this);
-        localStorage.removeItem('books');
-        localStorage.setItem('books', boks);
+      this.head = current.next;
+      this.size -= 1;
+      const boks = JSON.stringify(this);
+      localStorage.removeItem('books');
+      localStorage.setItem('books', boks);
     } else {
-        let previous;
-        for (let i = 1; i <= index; i += 1) {
-            previous = current;
-            current = current.next;
-        }
-        if (index === this.size - 1) {
-            this.tail = previous;
-        }
-        previous.next = current.next;
-        this.size -= 1;
-        const boks = JSON.stringify(this);
-        localStorage.removeItem('books');
-        localStorage.setItem('books', boks);
+      let previous;
+      for (let i = 1; i <= index; i += 1) {
+        previous = current;
+        current = current.next;
+      }
+      if (index === this.size - 1) {
+        this.tail = previous;
+      }
+      previous.next = current.next;
+      this.size -= 1;
+      const boks = JSON.stringify(this);
+      localStorage.removeItem('books');
+      localStorage.setItem('books', boks);
     }
     displayAllBooks(this);
   }
