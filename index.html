@@ -12,28 +12,34 @@
 <body onload="isValid()">
   <header class="header flex column">
     <div class="topNav flex">
-      <a href="#" class="logo">Awesome Books</a>
+      <h1 href="#" class="logo">Awesome Books</h1>
         <ul class="navbar flex">
-            <li><a href="#">List</a></li>
-            <li><a href="#">Add new</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#" onclick="displaySection(1)">List</a></li>
+            <li><a href="#" onclick="displaySection(2)">Add new</a></li>
+            <li><a href="#" onclick="displaySection(3)">Contact</a></li>
         </ul>
     </div>
     <div class="bottomNav flex">
       <p id="current_date"></p>
     </div>
   </header>
-  <section class="awesome-books container flex column">
-    <h1>All awesome books</h1>
-    <div class="books flex column">
 
-    </div>
+  <section id="awesome-books" class="container flex column">
+    <h2>All awesome books</h2>
+    <ul class="books flex column"></ul>
     <div class="decoration"></div>
-    <div class="add-books flex column">
-      <input onkeyup="isValid()" type="text" id="title" name="title" placeholder="Title" required>
-      <input onkeyup="isValid()" type="text" id="author" name="author" placeholder="Author" required>
-      <button disabled class="disabled" type="button" id="add">ADD</button>
-    </div>
+  </section>
+
+  <section id="add-books" class="container flex column invisible">
+    <h2>Add a new book</h2>
+    <input onkeyup="isValid()" type="text" id="title" name="title" placeholder="Title" required>
+    <input onkeyup="isValid()" type="text" id="author" name="author" placeholder="Author" required>
+    <button disabled class="disabled" type="button" id="add">ADD</button>
+  </section>
+
+  <section id="contact" class="container flex column invisible">
+    <h2>contact</h2>
+    
   </section>
 </body>
 <script src="script.js"></script>
