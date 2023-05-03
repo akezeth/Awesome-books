@@ -193,3 +193,29 @@ button:focus {
   font-weight: 500;
   justify-content: flex-end;
 }
+
+#contact p {
+  font-size: 2rem;
+}
+
+.p-bot {
+  align-self:self-start;
+  padding: 0 0 0.5rem 13rem;
+}
+
+.contactList {
+  font-size: 1.5rem;
+  align-self:self-start;
+  padding-left: 15rem;
+}
+
+.contactList a {
+  text-decoration: underline;
+  color: black;
+}
+
+.contactList li {
+  list-style-type: square;
+  margin-left: 8rem;
+  padding: 0.5rem 0;
+}
