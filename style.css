@@ -7,6 +7,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: lato, sans-serif;
+  text-decoration: none;
+  list-style-type: none;
 }
 
 body {
@@ -135,4 +137,41 @@ button:focus {
 .disabled:hover {
   background-color: rgb(102, 45, 57);
   color: grey;
+}
+
+.header {
+  gap: 0.75rem;
+  padding-bottom: 2rem;
+}
+
+.topNav {
+  padding: 0.5rem 1rem 0.65rem 2rem;
+  justify-content: space-between;
+  border: 3px solid #000;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.navbar {
+  /* gap: 2rem; */
+}
+
+.navbar li {
+  font-size: 1.25rem;
+  padding: 0.5rem 1rem;
+}
+
+.navbar li:nth-child(2) {
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+}
+
+.bottomNav {
+  font-size: 1rem;
+  font-weight: 500;
+  justify-content: flex-end;
 }

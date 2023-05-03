@@ -161,3 +161,6 @@ btn.addEventListener('click', () => {
   document.querySelector('#author').value = '';
   isValid();
 });
+
+const currentDate = document.querySelector('#current_date');
+currentDate.innerHTML = Date();
