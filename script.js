@@ -22,11 +22,12 @@ function displayAllBooks(books) {
   while (current) {
     const newBook = `
           <div class="book flex">
-              <div class="discription flex">
-                <h2>${current.value.title} by</h2>
-                <p>${current.value.author}</p>
-              </div>
-              <button onclick="books.remove(${index})">Remove</button>
+            <div class="discription flex">
+              <h2>"${current.value.title}"</h2>
+              <h3>by</h3>
+              <p><strong>${current.value.author}</strong></p>
+            </div>
+            <button onclick="books.remove(${index})">Remove</button>
           </div>
           `;
     booksContainer.innerHTML += newBook;
@@ -105,8 +106,9 @@ function displayBook(book, index) {
   const newBook = `
         <div class="book flex">
           <div class="discription flex">
-            <h2>${book.title} by </h2>
-            <p>${book.author}</p>
+            <h2>"${book.title}"</h2>
+            <h3>by</h3>
+            <p><strong>${book.author}</strong></p>
           </div>
           <button onclick="books.remove(${index})">Remove</button>
         </div>
@@ -134,7 +136,9 @@ const btn = document.getElementById('add');
 btn.addEventListener('click', () => {
   const title = document.querySelector('#title').value;
   const author = document.querySelector('#author').value;
-  const newBook = new Book(title, author);
-  books.add(newBook);
-  displayBook(newBook, books.size - 1);
+    const newBook = new Book(title, author);
+    books.add(newBook);
+    displayBook(newBook, books.size - 1);
+    document.querySelector('#title').value = "";
+    document.querySelector('#author').value = "";
 });
