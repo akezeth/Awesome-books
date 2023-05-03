@@ -1,9 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+/* =============================== Global Styles =============================== */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: lato, sans-serif;
 }
 
 body {
   padding: 1rem;
+  background-color: #e3e3e3;
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow-x: clip;
+}
+
+h1 {
+  font-size: calc(3vh + 2vw);
+  color: #7f66b5;
+}
+
+button {
+  transition: 0.3s;
+}
+
+button:hover,
+button:focus {
+  background-color: #7e67b1;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.container {
+  width: 80%;
+  max-width: 1440px;
+  margin: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.decoration {
+  margin: 10px 0 20px 0;
+  height: 3px;
+  width: 30%;
+  border-radius: 150%;
+  background-color: #000;
+}
+
+/* =============================== Books Styles =============================== */
+
+.awesome-books {
+  align-items: center;
+  justify-content: space-around;
+  gap: 0;
+}
+
+.add-books {
+  width: 50%;
+  max-width: 600px;
+  align-items: center;
+  gap: 10px;
+}
+
+.add-books input {
+  width: 100%;
+  min-height: 40px;
+  text-align: center;
+}
+
+.add-books input::placeholder {
+  text-align: center;
+  letter-spacing: normal;
+  transition: 0.5s;
+}
+
+.add-books input:hover::placeholder,
+.add-books input:focus::placeholder {
+  letter-spacing: 3px;
+}
+
+.add-books button {
+  height: 40px;
+  width: 35%;
+  max-width: 400px;
+  align-self: flex-end;
+}
+
+.books {
+  width: 100%;
+  border: 3px solid #000;
+  margin-top: 2rem;
+}
+
+.book {
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.books .book:nth-child(odd) {
+  background-color: #989898;
+}
+
+.discription {
+  gap: 10px;
+  align-items: baseline;
+  transition: 0.3s;
+}
+
+.book:hover .discription {
+  transform: scale(1.05);
+}
+
+.book button {
+  padding: 5px 10px;
+  font-weight: bold;
+  font-size: 16px;
+  border-right: 4px solid #000;
+  border-bottom: 4px solid #000;
+}
+
+.disabled {
+  cursor: not-allowed !important;
+  background-color: grey;
+}
+
+.disabled:hover {
+  background-color: rgb(102, 45, 57);
+  color: grey;
 }

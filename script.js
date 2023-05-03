@@ -21,11 +21,13 @@ function displayAllBooks(books) {
   let index = 0;
   while (current) {
     const newBook = `
-          <div class="book">
-              <h2>${current.value.title}</h2>
-              <p>${current.value.author}</p>
-              <button onclick="books.remove(${index})">Remove</button>
-              <hr>
+          <div class="book flex">
+            <div class="discription flex">
+              <h2>"${current.value.title}"</h2>
+              <h3>by</h3>
+              <p><strong>${current.value.author}</strong></p>
+            </div>
+            <button onclick="books.remove(${index})">Remove</button>
           </div>
           `;
     booksContainer.innerHTML += newBook;
@@ -102,11 +104,13 @@ class LinkedList {
 function displayBook(book, index) {
   const booksContainer = document.querySelector('.books');
   const newBook = `
-        <div class="book">
-            <h2>${book.title}</h2>
-            <p>${book.author}</p>
-            <button onclick="books.remove(${index})">Remove</button>
-            <hr>
+        <div class="book flex">
+          <div class="discription flex">
+            <h2>"${book.title}"</h2>
+            <h3>by</h3>
+            <p><strong>${book.author}</strong></p>
+          </div>
+          <button onclick="books.remove(${index})">Remove</button>
         </div>
         `;
   booksContainer.innerHTML += newBook;
@@ -126,6 +130,24 @@ function grabbingBooks() {
   return books;
 }
 
+function isValid() {
+  const title = document.querySelector('#title').value;
+  const author = document.querySelector('#author').value;
+  const btn = document.getElementById('add');
+
+  if (title && author) {
+    if (btn.classList.contains('disabled')) {
+      btn.classList.remove('disabled');
+    }
+    btn.disabled = false;
+  } else {
+    if (!btn.classList.contains('disabled')) {
+      btn.classList.add('disabled');
+    }
+    btn.disabled = true;
+  }
+}
+
 const books = grabbingBooks();
 const btn = document.getElementById('add');
 
@@ -135,4 +157,7 @@ btn.addEventListener('click', () => {
   const newBook = new Book(title, author);
   books.add(newBook);
   displayBook(newBook, books.size - 1);
+  document.querySelector('#title').value = '';
+  document.querySelector('#author').value = '';
+  isValid();
 });
