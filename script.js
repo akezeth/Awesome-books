@@ -21,14 +21,14 @@ function displayAllBooks(books) {
   let index = 0;
   while (current) {
     const newBook = `
-          <div class="book flex">
+          <li class="book flex">
             <div class="discription flex">
-              <h2>"${current.value.title}"</h2>
-              <h3>by</h3>
+              <h3>"${current.value.title}"</h3>
+              <span class="by">by</span>
               <p><strong>${current.value.author}</strong></p>
             </div>
             <button onclick="books.remove(${index})">Remove</button>
-          </div>
+          </li>
           `;
     booksContainer.innerHTML += newBook;
     current = current.next;
@@ -104,14 +104,14 @@ class LinkedList {
 function displayBook(book, index) {
   const booksContainer = document.querySelector('.books');
   const newBook = `
-        <div class="book flex">
+        <li class="book flex">
           <div class="discription flex">
-            <h2>"${book.title}"</h2>
-            <h3>by</h3>
+            <h3>"${book.title}"</h3>
+            <span class="by">by</span>
             <p><strong>${book.author}</strong></p>
           </div>
           <button onclick="books.remove(${index})">Remove</button>
-        </div>
+        </li>
         `;
   booksContainer.innerHTML += newBook;
 }
@@ -145,6 +145,27 @@ function isValid() {
       btn.classList.add('disabled');
     }
     btn.disabled = true;
+  }
+}
+
+function displaySection(sectionNumber) {
+  const booksList = document.querySelector("#awesome-books");
+  const addBooks = document.querySelector("#add-books");
+  const contact = document.querySelector("#contact");
+
+  booksList.classList.remove("invisible");
+  addBooks.classList.remove("invisible");
+  contact.classList.remove("invisible");
+
+  if(sectionNumber === 1){
+    addBooks.classList.add("invisible");
+    contact.classList.add("invisible");
+  }else if (sectionNumber === 2) {
+    booksList.classList.add("invisible");
+    contact.classList.add("invisible");
+  }else {
+    booksList.classList.add("invisible");
+    addBooks.classList.add("invisible");
   }
 }
 
