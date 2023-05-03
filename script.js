@@ -135,14 +135,14 @@ function isValid() {
   const author = document.querySelector('#author').value;
   const btn = document.getElementById('add');
 
-  if(isNaN(title) && isNaN(author) &&  title && author) {
-    if(btn.classList.contains("disabled")){
-      btn.classList.remove("disabled");
+  if (title && author) {
+    if (btn.classList.contains('disabled')) {
+      btn.classList.remove('disabled');
     }
     btn.disabled = false;
-  }else {
-    if(!btn.classList.contains("disabled")){
-      btn.classList.add("disabled");
+  } else {
+    if (!btn.classList.contains('disabled')) {
+      btn.classList.add('disabled');
     }
     btn.disabled = true;
   }
@@ -154,10 +154,10 @@ const btn = document.getElementById('add');
 btn.addEventListener('click', () => {
   const title = document.querySelector('#title').value;
   const author = document.querySelector('#author').value;
-    const newBook = new Book(title, author);
-    books.add(newBook);
-    displayBook(newBook, books.size - 1);
-    document.querySelector('#title').value = "";
-    document.querySelector('#author').value = "";
-    isValid()
+  const newBook = new Book(title, author);
+  books.add(newBook);
+  displayBook(newBook, books.size - 1);
+  document.querySelector('#title').value = '';
+  document.querySelector('#author').value = '';
+  isValid();
 });

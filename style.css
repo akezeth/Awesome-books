@@ -26,12 +26,10 @@ button {
   transition: 0.3s;
 }
 
-button:hover, button:focus {
+button:hover,
+button:focus {
   background-color: #7e67b1;
-  cursor: pointer ;
-}
-
-button:focus, button:hover {
+  cursor: pointer;
   letter-spacing: 1px;
 }
 
@@ -62,7 +60,7 @@ button:focus, button:hover {
 .awesome-books {
   align-items: center;
   justify-content: space-around;
-  gap: 0px;
+  gap: 0;
 }
 
 .add-books {
@@ -84,7 +82,8 @@ button:focus, button:hover {
   transition: 0.5s;
 }
 
-.add-books input:hover::placeholder, .add-books  input:focus::placeholder {
+.add-books input:hover::placeholder,
+.add-books input:focus::placeholder {
   letter-spacing: 3px;
 }
 
@@ -99,7 +98,11 @@ button:focus, button:hover {
   width: 100%;
   border: 3px solid #000;
   margin-top: 2rem;
-  
+}
+
+.book {
+  justify-content: space-between;
+  padding: 1rem 2rem;
 }
 
 .books .book:nth-child(odd) {
@@ -110,11 +113,6 @@ button:focus, button:hover {
   gap: 10px;
   align-items: baseline;
   transition: 0.3s;
-}
-
-.book {
-  justify-content: space-between;
-  padding: 1rem 2rem;
 }
 
 .book:hover .discription {
@@ -133,6 +131,7 @@ button:focus, button:hover {
   cursor: not-allowed !important;
   background-color: grey;
 }
+
 .disabled:hover {
   background-color: rgb(102, 45, 57);
   color: grey;
