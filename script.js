@@ -21,11 +21,12 @@ function displayAllBooks(books) {
   let index = 0;
   while (current) {
     const newBook = `
-          <div class="book">
-              <h2>${current.value.title}</h2>
-              <p>${current.value.author}</p>
+          <div class="book flex">
+              <div class="discription flex">
+                <h2>${current.value.title} by</h2>
+                <p>${current.value.author}</p>
+              </div>
               <button onclick="books.remove(${index})">Remove</button>
-              <hr>
           </div>
           `;
     booksContainer.innerHTML += newBook;
@@ -102,11 +103,12 @@ class LinkedList {
 function displayBook(book, index) {
   const booksContainer = document.querySelector('.books');
   const newBook = `
-        <div class="book">
-            <h2>${book.title}</h2>
+        <div class="book flex">
+          <div class="discription flex">
+            <h2>${book.title} by </h2>
             <p>${book.author}</p>
-            <button onclick="books.remove(${index})">Remove</button>
-            <hr>
+          </div>
+          <button onclick="books.remove(${index})">Remove</button>
         </div>
         `;
   booksContainer.innerHTML += newBook;
