@@ -1,9 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+/* =============================== Global Styles =============================== */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: lato, sans-serif;
 }
 
 body {
   padding: 1rem;
+  background-color: #e3e3e3;
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow-x: clip;
+}
+
+h1 {
+  font-size: calc(3vh + 2vw);
+  color: #7f66b5;
+}
+
+.container {
+  width: 80%;
+  max-width: 1440px;
+  margin: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+/* =============================== Books Styles =============================== */
+
+.awesome-books {
+  align-items: center;
+  justify-content: space-around;
+  gap: 0px;
+}
+
+.add-books {
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+}
+
+.add-books input {
+  width: 50%;
+  min-height: 40px;
+  max-width: 600px;
+  text-align: center;
+}
+
+.add-books input::placeholder {
+  text-align: center;
+  letter-spacing: normal;
+  transition: 0.5s;
+}
+
+.add-books input:hover::placeholder, .add-books  input:focus::placeholder {
+  letter-spacing: 3px;
+}
+
+.add-books button {
+  height: 40px;
+  width: 35%;
+  max-width: 400px;
+  background-color: #e2e2e2;
+  transition: 0.3s;
+}
+
+.add-books button:hover, .add-books button:focus {
+  background-color: #7e67b1;
+}
+
+.add-books button:focus, .add-books button:hover {
+  letter-spacing: 1px;
 }
