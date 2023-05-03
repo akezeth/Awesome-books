@@ -183,5 +183,6 @@ btn.addEventListener('click', () => {
   isValid();
 });
 
+// display date
 const currentDate = document.querySelector('#current_date');
 currentDate.innerHTML = Date();
