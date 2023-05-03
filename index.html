@@ -9,16 +9,17 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="flex column">
+<body onload="isValid()">
   <section class="awesome-books container flex column">
     <h1>All awesome books</h1>
     <div class="books flex column">
 
-    </div><br><br>
+    </div>
+    <div class="decoration"></div>
     <div class="add-books flex column">
-      <input type="text" id="title" name="title" placeholder="Title" required>
-      <input type="text" id="author" name="author" placeholder="Author" required>
-      <button type="button" id="add">ADD</button>
+      <input onkeyup="isValid()" type="text" id="title" name="title" placeholder="Title" required>
+      <input onkeyup="isValid()" type="text" id="author" name="author" placeholder="Author" required>
+      <button disabled class="disabled" type="button" id="add">ADD</button>
     </div>
   </section>
 </body>
