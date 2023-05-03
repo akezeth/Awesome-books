@@ -80,6 +80,7 @@ button:focus {
   align-items: center;
   justify-content: space-around;
   gap: 0;
+  margin-bottom: 5rem;
 }
 
 #add-books {
@@ -185,6 +186,15 @@ button:focus {
   border-right: 2px solid #000;
 }
 
+.navbar a {
+  color: black;
+}
+
+.navbar a.active {
+  color: #7f66b5;
+  font-weight: bold;
+}
+
 .bottomNav {
   font-size: 1rem;
   font-weight: 500;
@@ -221,7 +231,12 @@ button:focus {
   position: fixed;
   bottom: 0;
   width: 97%;
-  margin-bottom: 1rem;
+  z-index: 10;
+  background-color: #e3e3e3;
+}
+
+.footer {
+  margin: 1rem 0;
   padding: 0.25rem 1rem;
   border: 3px solid black;
 }
