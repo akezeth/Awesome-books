@@ -11,7 +11,6 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -52,12 +51,6 @@
 - **Add and/or remove books from the list using plain JS code**
 - **Dinamic creation of content**
 
-## 🚀 Live Demo <a name="live-demo"></a>
-
-You can find a live demo in [HERE]().
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ## 💻 Getting Started <a name="getting-started"></a>
 
 To get a local copy up and running, follow these steps.
@@ -94,7 +87,7 @@ To run the project, open with **index.html** with any web browser.
 For example, for Google Chrome with Ubuntu:
 
 ```sh
-  cd working-branch
+  cd Using-JS-classes-and-CSS
   google-chrome index.html
 ```
 
@@ -105,10 +98,6 @@ There are no test available for this project.
 ### Deployment
 
 To deploy this project, use any web hosting service.
-
-This project is deployed using [GitHub Pages](https://pages.github.com/).
-
-Go to [🚀 Live Demo](#live-demo) to check it out.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
