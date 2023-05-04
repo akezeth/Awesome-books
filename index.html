@@ -10,18 +10,53 @@
 </head>
 
 <body onload="isValid()">
-  <section class="awesome-books container flex column">
-    <h1>All awesome books</h1>
-    <div class="books flex column">
-
+  <header class="header flex column">
+    <div class="topNav flex">
+      <h1 href="#" class="logo">Awesome Books</h1>
+        <ul class="navbar flex">
+            <li><a href="#" onclick="displaySection(1)" class="nav1 active">List</a></li>
+            <li><a href="#" onclick="displaySection(2)" class="nav2">Add new</a></li>
+            <li><a href="#" onclick="displaySection(3)" class="nav3">Contact</a></li>
+        </ul>
     </div>
+    <div class="bottomNav flex">
+      <p id="current_date"></p>
+    </div>
+  </header>
+
+  <section id="awesome-books" class="container flex column">
+    <h2>All awesome books</h2>
+    <ul class="books flex column"></ul>
     <div class="decoration"></div>
-    <div class="add-books flex column">
-      <input onkeyup="isValid()" type="text" id="title" name="title" placeholder="Title" required>
-      <input onkeyup="isValid()" type="text" id="author" name="author" placeholder="Author" required>
-      <button disabled class="disabled" type="button" id="add">ADD</button>
+  </section>
+
+  <section id="add-books" class="container flex column invisible">
+    <h2>Add a new book</h2>
+    <input onkeyup="isValid()" type="text" id="title" name="title" placeholder="Title" required>
+    <input onkeyup="isValid()" type="text" id="author" name="author" placeholder="Author" required>
+    <button disabled class="disabled" type="button" id="add">ADD</button>
+  </section>
+
+  <section id="contact" class="container flex column invisible">
+    <h2>Contact Information</h2>
+    <p class="p-top">Do have any questions or you just want to say "Hello"?</p>
+    <p class="p-bot">You can reach out to us!</p>
+    <div class="contactList">
+      <ul>- Our e-mail : 
+        <li><a href="#">akezeth@gmail.com</a></li>
+        <li><a href="#">chawkimbarki500@gmail.com</a></li>
+      </ul>
+      <ul>- Our phone number : 
+        <li>+251 912321074</li>
+        <li>+216 22505334</li>
+      </ul>
     </div>
   </section>
+  <footer id="footer">
+    <div class="footer">
+      <h3>Copyright   ...</h3>
+    </div>
+  </footer>
 </body>
 <script src="script.js"></script>
 

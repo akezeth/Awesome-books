@@ -1,5 +1,6 @@
 /* eslint-disable max-classes-per-file */
 /* eslint-disable no-console */
+/* eslint-disable no-unused-vars */
 class Node {
   constructor(value) {
     this.value = value;
@@ -21,14 +22,14 @@ function displayAllBooks(books) {
   let index = 0;
   while (current) {
     const newBook = `
-          <div class="book flex">
+          <li class="book flex">
             <div class="discription flex">
-              <h2>"${current.value.title}"</h2>
-              <h3>by</h3>
+              <h3>"${current.value.title}"</h3>
+              <span class="by">by</span>
               <p><strong>${current.value.author}</strong></p>
             </div>
             <button onclick="books.remove(${index})">Remove</button>
-          </div>
+          </li>
           `;
     booksContainer.innerHTML += newBook;
     current = current.next;
@@ -104,14 +105,14 @@ class LinkedList {
 function displayBook(book, index) {
   const booksContainer = document.querySelector('.books');
   const newBook = `
-        <div class="book flex">
+        <li class="book flex">
           <div class="discription flex">
-            <h2>"${book.title}"</h2>
-            <h3>by</h3>
+            <h3>"${book.title}"</h3>
+            <span class="by">by</span>
             <p><strong>${book.author}</strong></p>
           </div>
           <button onclick="books.remove(${index})">Remove</button>
-        </div>
+        </li>
         `;
   booksContainer.innerHTML += newBook;
 }
@@ -148,6 +149,36 @@ function isValid() {
   }
 }
 
+function displaySection(sectionNumber) {
+  const booksList = document.querySelector('#awesome-books');
+  const addBooks = document.querySelector('#add-books');
+  const contact = document.querySelector('#contact');
+  const nav1 = document.querySelector('.nav1');
+  const nav2 = document.querySelector('.nav2');
+  const nav3 = document.querySelector('.nav3');
+
+  booksList.classList.remove('invisible');
+  addBooks.classList.remove('invisible');
+  contact.classList.remove('invisible');
+  nav1.classList.remove('active');
+  nav2.classList.remove('active');
+  nav3.classList.remove('active');
+
+  if (sectionNumber === 1) {
+    addBooks.classList.add('invisible');
+    contact.classList.add('invisible');
+    nav1.classList.add('active');
+  } else if (sectionNumber === 2) {
+    booksList.classList.add('invisible');
+    contact.classList.add('invisible');
+    nav2.classList.add('active');
+  } else {
+    booksList.classList.add('invisible');
+    addBooks.classList.add('invisible');
+    nav3.classList.add('active');
+  }
+}
+
 const books = grabbingBooks();
 const btn = document.getElementById('add');
 
@@ -161,3 +192,7 @@ btn.addEventListener('click', () => {
   document.querySelector('#author').value = '';
   isValid();
 });
+
+// display date
+const currentDate = document.querySelector('#current_date');
+currentDate.innerHTML = Date();
